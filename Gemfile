@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
+# Add Bootstrap 3 via Sass
+gem "bootstrap-sass", "~>3.3.6"
+
 # Add gem needed for Heroku support
 gem "rails_12factor", group: :production
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 # Use postgresql as the database for Active Record
