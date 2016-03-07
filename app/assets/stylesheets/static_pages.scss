@@ -1,3 +1,35 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.hero {
+	background: url(image_path("hero.jpg")) no-repeat center center fixed;
+	background-size: cover;
+	height: 370px;
+	display: flex;
+	flex-flow: column;
+	box-shadow: 0px 3px 8px #2a2a2a;
+}
+
+.centered-row {
+	flex: none;
+}
+
+.frosty {
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.frosty h1, .frosty h3 {
+	text-shadow: rgba(0, 0, 0, 0.95) 1px 1px;
+}
+
+.frosty h1 {
+	font-weight: 200;
+}
+
+.frosty h3 {
+	font-weight: 100;
+}

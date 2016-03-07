@@ -27,3 +27,15 @@
 	color: white;
 	font-weight: 100;
 }
+
+h1, h2, h3, h4, h5, h6, .navbar {
+	margin: 0;
+}
+
+.spacer {
+	flex: auto;
+}
+
+.btn {
+	border-radius: 0;
+}
