@@ -13,4 +13,17 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "static_pages"
+@import "static_pages";
+
+.navbar {
+	border-radius: 0;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-weight: 200;
+	box-shadow: 0px 1px 3px #2a2a2a;
+	background: url(image_path("dark_geometric.png"));
+}
+
+.navbar-inverse .navbar-brand {
+	color: white;
+	font-weight: 100;
+}
