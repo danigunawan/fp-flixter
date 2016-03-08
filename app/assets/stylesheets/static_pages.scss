@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.hero-column {
+	padding: 0;
+}
+
 .hero {
 	background: url(image_path("hero.jpg")) no-repeat center center fixed;
 	background-size: cover;
@@ -9,6 +13,7 @@
 	display: flex;
 	flex-flow: column;
 	box-shadow: 0px 3px 8px #2a2a2a;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .centered-row {
@@ -24,6 +29,7 @@
 
 .frosty h1, .frosty h3 {
 	text-shadow: rgba(0, 0, 0, 0.95) 1px 1px;
+	margin: 0;
 }
 
 .frosty h1 {
