@@ -20,6 +20,11 @@ body {
 	font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+}
+
 .navbar {
 	border-radius: 0;
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
@@ -50,10 +55,16 @@ body {
 	background: #fff;
 	border: 1px solid #ccc;
 	border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+	padding: 15px;
 }
 
-.icon {
-	width: 100%;
-	height: auto;
-	max-height: 100px;
+.devise-links {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.devise-links li {
+	display: inline-block;
+	margin: 0 10px 5px 0;
 }
