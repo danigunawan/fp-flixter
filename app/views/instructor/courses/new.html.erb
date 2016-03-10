@@ -6,7 +6,7 @@
 			<%= simple_form_for @course, url: instructor_courses_path do |f| %>
 				<%= f.input :title %>
 				<%= f.input :description %>
-				<%= f.input :cost %>
+				<%= f.input :cost, input_html: {min: 0.00, step: 0.01, max: 99999.99} %>
 				<br>
 				<%= f.submit "Create", class: "btn btn-success" %>
 			<% end %>
