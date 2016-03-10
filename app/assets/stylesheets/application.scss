@@ -18,6 +18,9 @@
 body {
 	background: url(image_path("grey_grid.png"));
 	font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -42,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 	display: inline-block;
 }
 
-.spacer {
+.main-content {
 	flex: auto;
 }
 
@@ -56,6 +59,19 @@ h1, h2, h3, h4, h5, h6 {
 	border: 1px solid #ccc;
 	border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
 	padding: 15px;
+}
+
+.footer {
+	background-color: rgba(36, 32, 33, 0.9);
+	margin-top: 20px;
+	color: white;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-weight: 100;
+	padding: 10px 0;
+}
+
+.footer a {
+	color: white;
 }
 
 .devise-links {
