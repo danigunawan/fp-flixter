@@ -1,0 +1,13 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="box col-xs-10 col-xs-offset-1">
+			<h2>Enter Your Section Title</h2>
+			<br>
+			<%= simple_form_for @section, url: instructor_course_sections_path(params[:course_id]) do |f| %>
+				<%= f.input :title %>
+				<br>
+				<%= f.submit "Add Section", class: "btn btn-success" %>
+			<% end %>
+		</div>
+	</div>
+</div>
