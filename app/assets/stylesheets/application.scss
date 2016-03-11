@@ -14,6 +14,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "static_pages";
+@import "instructor/courses";
 
 body {
 	background: url(image_path("grey_grid.png"));
@@ -75,10 +76,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .has-error {
-  color: #ff3333;
-  background-color: #FFEEEE;
-  border-radius: 3px;
-  padding: 0 3px;
+	color: #ff3333;
+	background-color: #FFEEEE;
+	border-radius: 3px;
+	padding: 0 3px;
 }
 
 .help-block {

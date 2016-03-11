@@ -1,17 +1,21 @@
 <div class="container-fluid">
 	<div class="row">
-		<div class="box col-xs-10 col-xs-offset-1">
-			<h2 class="text-center"><%= @course.title %></h2>
+		<div class="box col-xs-10 col-xs-offset-1 instructor-course-view">
+			<h2><%= @course.title %></h2>
 			<br>
-			<%= link_to "Preview As Student", course_path(@course), class: "btn btn-success pull-right" %>
-			<div class="clearfix"></div>
-			<br>
-			<div class="text-center">
-				<%= link_to "Add Section", new_instructor_course_section_path(@course), class: "btn btn-success btn-lg" %>
-			</div>
+			<%= link_to "Preview As Student", course_path(@course), class: "btn btn-success" %>
+			<%= link_to "Add Section", new_instructor_course_section_path(@course), class: "btn btn-success" %>
 			<ul>
 				<% @course.sections.each do |section| %>
-					<li><%= section.title %></li>
+					<li>
+						<h4><strong><%= section.title %></strong></h4>
+						<ul>
+							<% section.lessons.each do |lesson| %>
+								<li><%= lesson.title %> - <%= lesson.subtitle %></li>
+							<% end %>
+						</ul>
+						<%= link_to "Add Lesson", new_instructor_section_lesson_path(section), class: "btn btn-success btn-xs" %>
+					</li>
 				<% end %>
 			</ul>
 		</div>
