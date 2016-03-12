@@ -4,9 +4,7 @@
 			<h1 class="text-center">Start Learning Today!</h1>
 			<br>
 			<% @courses.each do |course| %>
-				<h3 class="text-center">
-					<%= link_to course.title, course_path(course) %>
-				</h3>
+				<h3><%= link_to course.title, course_path(course) %></h3>
 				<br>
 				<div class="row">
 					<div class="col-xs-12 col-sm-8">
