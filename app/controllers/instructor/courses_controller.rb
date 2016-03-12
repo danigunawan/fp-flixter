@@ -16,6 +16,7 @@ class Instructor::CoursesController < ApplicationController
 
   def show
     @course = Course.find params[:id]
+    redirect_to course_path(@course) if @course.user != current_user
   end
 
   private 

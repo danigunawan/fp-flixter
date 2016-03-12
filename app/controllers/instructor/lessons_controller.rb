@@ -21,7 +21,7 @@ class Instructor::LessonsController < ApplicationController
   end
 
   def require_course_owner
-    return render text: "Not Allowed: A course can only be modified by the course owner", status: :unauthorized if current_section.course.user != current_user
+    render text: "Not Allowed: A course can only be modified by its owner", status: :unauthorized if current_section.course.user != current_user
   end
 
   def lesson_params
