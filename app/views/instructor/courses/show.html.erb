@@ -5,19 +5,18 @@
 			<br>
 			<%= link_to "Preview As Student", course_path(@course), class: "btn btn-success" %>
 			<%= link_to "Add Section", new_instructor_course_section_path(@course), class: "btn btn-success" %>
-			<ul>
-				<% @course.sections.each do |section| %>
-					<li>
-						<h4><strong><%= section.title %></strong></h4>
-						<ul>
-							<% section.lessons.each do |lesson| %>
-								<li><strong><%= lesson.title %></strong> - <%= lesson.subtitle %></li>
-							<% end %>
-						</ul>
-						<%= link_to "Add Lesson", new_instructor_section_lesson_path(section), class: "btn btn-success btn-xs" %>
-					</li>
-				<% end %>
-			</ul>
+			<hr>
+			<% @course.sections.each do |section| %>
+				<div class="section">	
+					<h3><%= section.title %></h3>
+					<ul>
+						<% section.lessons.each do |lesson| %>
+							<li><strong><%= lesson.title %></strong> - <%= lesson.subtitle %></li>
+						<% end %>
+					</ul>
+					<%= link_to "Add Lesson", new_instructor_section_lesson_path(section), class: "btn btn-success btn-xs" %>
+				</div>	
+			<% end %>
 		</div>
 	</div>
 </div>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :courses, only: [:index, :show] do
     get "(page/:page)", action: :index, on: :collection, as: ""
   end
+  resources :lessons, only: :show
   namespace :instructor do
     resources :courses, only: [:new, :create, :show] do
       resources :sections, only: [:new, :create]

@@ -2,28 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.instructor-course-view ul {
-	list-style-type: none;
-	padding: 0;
-	margin-top: 10px;
-}
-
-.instructor-course-view ul li {
-	margin-bottom: 10px;
-}
-
 .instructor-course-view .btn {
 	margin-bottom: 5px;
 }
 
-.instructor-course-view h4 {
-	margin-bottom: 5px;
-}
-
-.instructor-course-view ul ul {
-	margin: 5px 0;
-}
-
-.instructor-course-view ul ul li {
-	margin: 0;
+.instructor-course-view .section ul {
+	margin-bottom: 10px;
 }
