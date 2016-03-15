@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+# Use MiniMagick to enable CarrierWave image manipulation via ImageMagick
+gem "mini_magick"
+
 # Use fog for CarrierWave Amazon S3 support
 gem "fog"
 

@@ -6,7 +6,7 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-8">
 					<% if @course.image.present? %>
-						<%= image_tag @course.image, class: "course-thumbnail" %>
+						<%= image_tag @course.image.thumbnail, class: "course-thumbnail" %>
 					<% end %>
 					<p><%= @course.description %></p>
 				</div>
