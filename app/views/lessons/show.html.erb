@@ -3,6 +3,7 @@
 		<div class="col-xs-10 col-xs-offset-1 box">
 			<h2><%= @lesson.title %></h2>
 			<p><%= @lesson.subtitle %></p>
+			<%= link_to "Video", @lesson.video.url %>
 		</div>
 	</div>
 </div>
