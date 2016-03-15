@@ -1,4 +1,10 @@
 source 'https://rubygems.org'
+# Use Figaro to store and load configuration values
+gem "figaro"
+
+# Use CarrierWave for easy image and video uploads
+gem "carrierwave"
+
 # Use Kaminari for simple pagination
 gem "kaminari"
 

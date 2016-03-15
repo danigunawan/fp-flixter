@@ -17,3 +17,9 @@
 
 # Ignore debugging history files 
 .byebug_history
+
+# Ignore application configuration
+/config/application.yml
+
+# Ignore any files uploaded to the file system in dev
+/public/uploads/*
