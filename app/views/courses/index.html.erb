@@ -8,7 +8,9 @@
 				<br>
 				<div class="row">
 					<div class="col-xs-12 col-sm-8">
-						<%= image_tag course.image, class: "course-thumbnail" %>
+						<% if course.image.present? %>
+							<%= image_tag course.image, class: "course-thumbnail" %>
+						<% end %>
 						<p><%= course.description %></p>
 					</div>
 					<div class="col-xs-12 col-sm-4 text-center">

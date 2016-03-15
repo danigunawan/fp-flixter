@@ -6,8 +6,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
+  # storage :file
+  storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -46,4 +46,15 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+
+  # Delete any empty directories left over when an image is removed
+  after :remove, :delete_empty_directories
+
+  private
+  def delete_empty_directories
+    path = File.expand_path store_dir, root
+    Dir.delete path # Fails if path is not an empty directory
+  rescue SystemCallError
+    true # Nothing needs to be done because this means the directory is not empty
+  end
 end

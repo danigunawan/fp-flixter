@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+# Use fog for CarrierWave Amazon S3 support
+gem "fog"
+
 # Use Figaro to store and load configuration values
 gem "figaro"
 
