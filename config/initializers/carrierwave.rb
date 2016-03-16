@@ -6,5 +6,6 @@ CarrierWave.configure do |config|
     region: "us-west-1"
   }
   config.fog_directory = ENV["AWS_BUCKET"]
-  config.fog_public = false
+  config.fog_public = true
+  config.fog_use_ssl_for_aws = true
 end
