@@ -58,11 +58,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  # Use byebug anywhere in the code to stop execution and get a debugger console
+  gem "byebug"
 end
 
 group :development do
+  # An enhanced version of IRB that's useful for debugging
+  gem "pry"
+
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
