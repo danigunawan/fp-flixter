@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 # Use MiniMagick to enable CarrierWave image manipulation via ImageMagick
 gem "mini_magick"
 
-# Use fog for CarrierWave Amazon S3 support
-gem "fog"
+# Use CarrierWave AWS in place of fog for more performant CarrierWave Amazon S3 support
+gem "carrierwave-aws"
 
 # Use Figaro to store and load configuration values
 gem "figaro"
