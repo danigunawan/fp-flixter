@@ -4,14 +4,11 @@
 			<h2><%= @lesson.title %></h2>
 			<p><%= @lesson.subtitle %></p>
 			<div class="row">
-				<div class="col-xs-12 col-lg-11">
-			<video id="video-<%= @lesson.id %>" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls preload="auto" data-setup="{}">
-				<source src="<%= @lesson.video.url %>" type="video/mp4">
-				<p class="vjs-no-js">
-					To view this video please enable JavaScript and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support" target="_blank">supports HTML5 video.</a>
-				</p>
-			</video>
-		</div>
+				<div class="col-xs-12 col-md-11 col-lg-9">
+					<video id="video" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid hidden" controls preload="auto">
+						<source src="<%= @lesson.video.url %>" type="video/mp4">
+					</video>
+				</div>
 			</div>
 		</div>
 	</div>

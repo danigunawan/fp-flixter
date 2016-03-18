@@ -1,3 +1,8 @@
 // Place all the styles related to the lessons controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Provides a proper default style for the Video.js player even on browsers that do not preload and trigger native controls */
+.vjs-fluid {
+	padding-top: 56.25%;
+}
