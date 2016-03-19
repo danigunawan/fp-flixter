@@ -1,6 +1,8 @@
 class Course < ActiveRecord::Base
   belongs_to :user, inverse_of: :courses
   has_many :sections, inverse_of: :course, dependent: :destroy
+  has_many :enrollments, inverse_of: :course
+  has_many :enrolled_users, through: :enrollments, source: :user
 
   mount_uploader :image, ImageUploader
 

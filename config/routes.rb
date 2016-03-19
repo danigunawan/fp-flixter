@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root "static_pages#home"
   resources :courses, only: [:index, :show] do
     get "(page/:page)", action: :index, on: :collection, as: ""
+    resources :enrollments, only: [:create]
   end
   resources :lessons, only: :show
   namespace :instructor do
