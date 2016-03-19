@@ -38,6 +38,9 @@
 			</div>
 		</nav>
 		<div class="container-fluid text-center">
+			<noscript>
+				<p class="alert alert-danger" role="alert">Warning: Some features on this site require JavaScript to work properly.</p>
+			</noscript>
 			<% if flash[:alert].present? %>
 				<p class="alert alert-danger" role="alert"><%= flash[:alert] %></p>
 			<% end %>
