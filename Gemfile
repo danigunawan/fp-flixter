@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+# Use Stripe to process course enrollment payments
+gem "stripe"
+
 # Use MiniMagick to enable CarrierWave image manipulation via ImageMagick
 gem "mini_magick"
 

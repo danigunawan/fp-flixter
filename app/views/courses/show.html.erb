@@ -11,12 +11,17 @@
 					<p><%= @course.description %></p>
 				</div>
 				<div class="col-xs-12 col-sm-4 text-center">
-					<h3><span class="label label-default"><%= number_to_currency @course.cost %></span></h3>
+					<h3><span class="label label-default"><%= @course.cost.zero? ? "Free" : number_to_currency(@course.cost) %></span></h3>
 					<br>
 					<% if current_user && current_user.enrolled_in?(@course) %>
 						<h3><span class="label label-default">You're Enrolled!</span></h3>
-					<% else %>	
+					<% elsif @course.cost.zero? %>
 						<%= link_to "Enroll", course_enrollments_path(@course), method: :post, class: "btn btn-success btn-lg" %>
+					<% else %>			
+						<%= link_to "Enroll", "#", class: "btn btn-success btn-lg", id: "stripe-enroll", data: {amount: (@course.cost * 100).to_i, key: Rails.configuration.stripe[:publishable_key], description: @course.title + " (" + number_to_currency(@course.cost) + ")"} %>
+						<%= form_tag course_enrollments_path(@course), id: "hidden-stripe-form" do %>
+							<%= hidden_field_tag "stripe_token" %>
+				      	<% end %>
 					<% end %>
 					<% if current_user == @course.user %>
 						<br>
