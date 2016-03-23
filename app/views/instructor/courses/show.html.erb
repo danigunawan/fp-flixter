@@ -12,7 +12,7 @@
 					<ul class="sortable-lessons">
 						<% section.lessons.rank(:sort_order).each do |lesson| %>
 							<li data-update-url="<%= instructor_section_lesson_path section, lesson %>">
-								<strong><%= lesson.title %></strong> - <%= lesson.subtitle %>
+								<span class="glyphicon glyphicon-sort"></span> <strong><%= lesson.title %></strong> - <%= lesson.subtitle %>
 							</li>
 						<% end %>
 					</ul>
