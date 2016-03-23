@@ -15,9 +15,15 @@ class Instructor::LessonsController < ApplicationController
     end
   end
 
+  def update
+    lesson = Lesson.find params[:id]
+    lesson.update_attributes(sort_order_position: params[:sort_order_position]) ? head(:ok) : head(:unprocessable_entity)
+  end
+
   private
+
   def current_section
-    return @current_section ||= Section.find(params[:section_id])
+    @current_section ||= Section.find params[:section_id]
   end
 
   def require_course_owner

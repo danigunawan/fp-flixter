@@ -9,9 +9,11 @@
 			<% @course.sections.each do |section| %>
 				<div class="section">	
 					<h3><%= section.title %></h3>
-					<ul>
+					<ul class="sortable-lessons">
 						<% section.lessons.rank(:sort_order).each do |lesson| %>
-							<li><strong><%= lesson.title %></strong> - <%= lesson.subtitle %></li>
+							<li data-update-url="<%= instructor_section_lesson_path section, lesson %>">
+								<strong><%= lesson.title %></strong> - <%= lesson.subtitle %>
+							</li>
 						<% end %>
 					</ul>
 					<%= link_to "Add Lesson", new_instructor_section_lesson_path(section), class: "btn btn-success btn-xs" %>

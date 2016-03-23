@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+# Use jQuery UI to support sorting of lessons and sections
+gem "jquery-ui-rails"
+
 # Use ranked-model to make lessons and sections sortable
 gem "ranked-model"
 

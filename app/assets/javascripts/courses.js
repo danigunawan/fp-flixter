@@ -1,5 +1,5 @@
 $(document).on("page:change", function() {
-	stripeEnrollBtn = document.getElementById("stripe-enroll");
+	var stripeEnrollBtn = document.getElementById("stripe-enroll");
 	if (stripeEnrollBtn != null) {
 		// Attach a listener to the enroll button if a Stripe payment will be needed 
 		$(stripeEnrollBtn).click(function() {
