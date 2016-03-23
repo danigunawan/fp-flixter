@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+# Use ranked-model to make lessons and sections sortable
+gem "ranked-model"
+
 # Use Stripe to process course enrollment payments
 gem "stripe"
 

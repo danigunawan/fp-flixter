@@ -17,6 +17,7 @@
 						<h3><span class="label label-default">You're Enrolled!</span></h3>
 					<% elsif @course.cost.zero? %>
 						<%= link_to "Enroll", course_enrollments_path(@course), method: :post, class: "btn btn-success btn-lg" %>
+						<br>
 					<% else %>			
 						<%= link_to "Enroll", "#", class: "btn btn-success btn-lg", id: "stripe-enroll", data: {amount: (@course.cost * 100).to_i, key: Rails.configuration.stripe[:publishable_key], description: @course.title + " (" + number_to_currency(@course.cost) + ")"} %>
 						<%= form_tag course_enrollments_path(@course), id: "hidden-stripe-form" do %>
@@ -24,7 +25,6 @@
 				      	<% end %>
 					<% end %>
 					<% if current_user == @course.user %>
-						<br>
 						<br>
 						<%= link_to "Administer Course", instructor_course_path(@course), class: "btn btn-success btn-lg" %>
 					<% end %>
@@ -37,7 +37,7 @@
 						<div class="section">
 							<h3><%= section.title %></h3>
 							<ul>
-								<% section.lessons.each do |lesson| %>
+								<% section.lessons.rank(:sort_order).each do |lesson| %>
 									<li>
 										<%= link_to lesson_path(lesson) do %>
 											<strong><%= lesson.title %></strong> - <%= lesson.subtitle %>

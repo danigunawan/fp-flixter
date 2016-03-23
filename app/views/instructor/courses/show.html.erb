@@ -10,7 +10,7 @@
 				<div class="section">	
 					<h3><%= section.title %></h3>
 					<ul>
-						<% section.lessons.each do |lesson| %>
+						<% section.lessons.rank(:sort_order).each do |lesson| %>
 							<li><strong><%= lesson.title %></strong> - <%= lesson.subtitle %></li>
 						<% end %>
 					</ul>
