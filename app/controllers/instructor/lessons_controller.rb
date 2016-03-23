@@ -17,11 +17,11 @@ class Instructor::LessonsController < ApplicationController
 
   def update
     lesson = Lesson.find params[:id]
+    return head :forbidden if lesson.section != current_section # Protects against section/lesson mismatch
     lesson.update_attributes(sort_order_position: params[:sort_order_position]) ? head(:ok) : head(:unprocessable_entity)
   end
 
   private
-
   def current_section
     @current_section ||= Section.find params[:section_id]
   end

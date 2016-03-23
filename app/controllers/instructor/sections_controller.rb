@@ -15,6 +15,12 @@ class Instructor::SectionsController < ApplicationController
     end
   end
 
+  def update
+    section = Section.find params[:id]
+    return head :forbidden if section.course != current_course # Protects against course/section mismatch
+    section.update_attributes(sort_order_position: params[:sort_order_position]) ? head(:ok) : head(:unprocessable_entity)
+  end
+
   private
   def current_course
     @current_course ||= Course.find params[:course_id]

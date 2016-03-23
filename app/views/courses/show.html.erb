@@ -33,7 +33,7 @@
 			<hr>
 			<div class="row">
 				<div class="col-xs-12">
-					<% @course.sections.each do |section| %>
+					<% @course.sections.rank(:sort_order).each do |section| %>
 						<div class="section">
 							<h3><%= section.title %></h3>
 							<ul>
