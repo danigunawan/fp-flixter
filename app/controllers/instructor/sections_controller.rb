@@ -2,16 +2,13 @@ class Instructor::SectionsController < ApplicationController
   before_action :authenticate_user!
   before_action :require_course_owner
 
-  def new
-    @section = Section.new
-  end
-
   def create
     @section = Section.new section_params.merge(course_id: current_course.id)
     if @section.save
       redirect_to instructor_course_path(current_course)
     else
-      render "new", status: :unprocessable_entity
+      @course = current_course # Provide the instance variable expected by the instructor course view
+      render "instructor/courses/show", status: :unprocessable_entity
     end
   end
 

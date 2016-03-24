@@ -20,4 +20,9 @@ $(document).on("page:change", function() {
 	if (sortableLessons.length > 0) {
 		sortableLessons.sortable({update: sortUpdater});
 	}
+
+	var newSectionModal = document.getElementById("newSectionModal");
+	if(newSectionModal != null && $(newSectionModal).find(".has-error").length > 0) {
+		$("#newSectionModalToggle").click();
+	}
 });

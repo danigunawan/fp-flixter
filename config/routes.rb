@@ -13,12 +13,13 @@ Rails.application.routes.draw do
   end
   namespace :instructor do
     resources :courses, only: [:new, :create, :show] do
-      resources :sections, only: [:new, :create, :update]
+      resources :sections, only: [:create, :update]
     end
     resources :sections, only: [] do
       resources :lessons, only: [:new, :create, :update]
     end
   end
+  get "instructor/courses/:course_id/sections" => redirect("instructor/courses/%{course_id}")
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

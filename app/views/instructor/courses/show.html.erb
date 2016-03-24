@@ -16,7 +16,9 @@
 					<%= link_to "Preview As Student", course_path(@course), class: "btn btn-success btn-lg" %>
 					<br>
 					<br>
-					<%= link_to "Add Section", new_instructor_course_section_path(@course), class: "btn btn-success btn-lg" %>
+					<button type="button" id="newSectionModalToggle" class="btn btn-success btn-lg" data-toggle="modal" data-target="#newSectionModal">
+						Add Section
+					</button>
 				</div>
 			</div>
 			<hr>
@@ -35,6 +37,27 @@
 					</div>	
 				<% end %>
 			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal for creating new sections -->
+<div class="modal fade" id="newSectionModal" tabindex="-1" role="dialog" aria-labelledby="newSectionModal">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="newSectionModalTitle">Enter Your Section Title</h4>
+			</div>
+			<%= simple_form_for @section, url: instructor_course_sections_path(@course) do |f| %>
+				<div class="modal-body">
+					<%= f.input :title %>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<%= f.submit "Add Section", class: "btn btn-success" %>
+				</div>
+			<% end %>
 		</div>
 	</div>
 </div>
