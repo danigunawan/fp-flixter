@@ -6,6 +6,11 @@ Rails.application.routes.draw do
     resources :enrollments, only: [:create]
   end
   resources :lessons, only: :show
+  resource :dashboard, only: :show do
+    get "enrolled/:enrolled_page", action: :show, on: :member, as: "enrolled_page"
+    get "taught/:taught_page", action: :show, on: :member, as: "taught_page"
+    get "enrolled/:enrolled_page/taught/:taught_page", action: :show, on: :member, as: "both_page"
+  end
   namespace :instructor do
     resources :courses, only: [:new, :create, :show] do
       resources :sections, only: [:new, :create, :update]
