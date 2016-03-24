@@ -8,3 +8,30 @@
 	float: left;
 	margin: 0 15px 5px 0;
 }
+
+.section {
+	background-color: #ededed;
+	border: 1px solid;
+	border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+	padding: 15px;
+	margin: 10px 0;
+}
+
+.section h3 {
+	margin-bottom: 5px;
+}
+
+.section ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.section ul li {
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-weight: 200;
+	background-color: black;
+	color: #ededed;
+	margin-bottom: 5px;
+	padding: 0 5px;
+}

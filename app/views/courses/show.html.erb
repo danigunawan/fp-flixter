@@ -31,24 +31,18 @@
 				</div>
 			</div>
 			<hr>
-			<div class="row">
-				<div class="col-xs-12">
-					<% @course.sections.rank(:sort_order).each do |section| %>
-						<div class="section">
-							<h3><%= section.title %></h3>
-							<ul>
-								<% section.lessons.rank(:sort_order).each do |lesson| %>
-									<li>
-										<%= link_to lesson_path(lesson) do %>
-											<strong><%= lesson.title %></strong> - <%= lesson.subtitle %>
-										<% end %>
-									</li>
-								<% end %>
-							</ul>
-						</div>
-					<% end %>
+			<% @course.sections.rank(:sort_order).each do |section| %>
+				<div class="section">
+					<h3><%= section.title %></h3>
+					<ul>
+						<% section.lessons.rank(:sort_order).each do |lesson| %>
+							<%= link_to lesson_path(lesson) do %>
+								<li><strong><%= lesson.title %></strong> - <%= lesson.subtitle %></li>
+							<% end %>
+						<% end %>
+					</ul>
 				</div>
-			</div>
+			<% end %>
 		</div>
 	</div>
 </div>
