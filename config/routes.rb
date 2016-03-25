@@ -16,10 +16,14 @@ Rails.application.routes.draw do
       resources :sections, only: [:create, :update]
     end
     resources :sections, only: [] do
-      resources :lessons, only: [:new, :create, :update]
+      resources :lessons, only: [:create, :update]
     end
   end
   get "instructor/courses/:course_id/sections" => redirect("instructor/courses/%{course_id}")
+  get "instructor/sections/:section_id/lessons" =>  redirect {|params|
+    course = Section.find(params[:section_id]).course
+    "instructor/courses/#{course.id}"
+  }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

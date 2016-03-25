@@ -2,16 +2,15 @@ class Instructor::LessonsController < ApplicationController
   before_action :authenticate_user!
   before_action :require_course_owner
 
-  def new
-    @lesson = Lesson.new
-  end
-
   def create
     @lesson = Lesson.new lesson_params.merge(section_id: current_section.id)
     if @lesson.save
       redirect_to instructor_course_path(current_section.course)
     else
-      render "new", status: :unprocessable_entity
+      @course = current_section.course
+      @section = Section.new
+      @validation_section = current_section
+      render "instructor/courses/show", status: :unprocessable_entity
     end
   end
 

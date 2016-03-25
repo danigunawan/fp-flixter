@@ -33,7 +33,9 @@
 								</li>
 							<% end %>
 						</ul>
-						<%= link_to "Add Lesson", new_instructor_section_lesson_path(section), class: "btn btn-success btn-xs" %>
+						<button type="button" class="btn btn-success btn-xs newLessonModalToggle" data-toggle="modal" data-target="#newLessonModal" data-form-submit-url="<%= instructor_section_lessons_path section %>" data-section-title="<%= section.title %>" id="newLessonModalToggle-<%= section.id %>">
+							Add Lesson
+						</button>
 					</div>	
 				<% end %>
 			</div>
@@ -56,6 +58,30 @@
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					<%= f.submit "Add Section", class: "btn btn-success" %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<!-- Modal for creating new lessons -->
+<div class="modal fade" id="newLessonModal" tabindex="-1" role="dialog" aria-labelledby="newLessonModal" data-validation-recovery="<%= @validation_section.id if @validation_section %>">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="newLessonModalTitle">Enter Your Lesson Details</h4>
+				<h5></h5>
+			</div>
+			<%= simple_form_for @lesson, url: "#" do |f| %>
+				<div class="modal-body">
+					<%= f.input :title %>
+					<%= f.input :subtitle %>
+					<%= f.input :video %>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<%= f.submit "Add Lesson", class: "btn btn-success" %>
 				</div>
 			<% end %>
 		</div>

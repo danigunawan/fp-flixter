@@ -7,7 +7,8 @@ class Instructor::SectionsController < ApplicationController
     if @section.save
       redirect_to instructor_course_path(current_course)
     else
-      @course = current_course # Provide the instance variable expected by the instructor course view
+      @course = current_course
+      @lesson = Lesson.new
       render "instructor/courses/show", status: :unprocessable_entity
     end
   end

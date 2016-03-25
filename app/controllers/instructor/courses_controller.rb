@@ -17,7 +17,8 @@ class Instructor::CoursesController < ApplicationController
   def show
     @course = Course.find params[:id]
     return redirect_to course_path(@course) if @course.user != current_user
-    @section = Section.new # Used for new section modal
+    @section = Section.new # Used by new section modal
+    @lesson = Lesson.new # Used by new lesson modal
   end
 
   private 
