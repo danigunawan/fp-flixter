@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     end
   end
   get "instructor/courses/:course_id/sections" => redirect("instructor/courses/%{course_id}")
-  get "instructor/sections/:section_id/lessons" =>  redirect {|params|
+  get "instructor/sections/:section_id/lessons" => redirect {|params|
     course = Section.find(params[:section_id]).course
     "instructor/courses/#{course.id}"
   }
