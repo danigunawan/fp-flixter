@@ -10,6 +10,12 @@
 					</video>
 				</div>
 			</div>
+			<br>
+			<% if @lesson.next_lesson.present? %>
+				<%= link_to lesson_path(@lesson.next_lesson), class: "btn btn-success pull-right" do %>
+					Next Lesson <span class="glyphicon glyphicon-menu-right"></span>
+				<% end %>
+			<% end %>
 		</div>
 	</div>
 </div>
