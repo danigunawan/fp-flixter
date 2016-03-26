@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root "static_pages#home"
+  get "team" => "static_pages#team"
+  get "careers" => "static_pages#careers"
+  get "privacy" => "static_pages#privacy"
   resources :courses, only: [:index, :show] do
     get "(page/:page)", action: :index, on: :collection, as: ""
     resources :enrollments, only: [:create]
