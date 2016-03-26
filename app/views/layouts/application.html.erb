@@ -54,9 +54,39 @@
 		</div>
 		<footer class="footer">
 			<div class="container-fluid">
-				<b>Teachers</b>
-				<br>
-				<%= link_to "Add a Course", new_instructor_course_path %>
+				<div class="row">
+					<div class="col-xs-12 col-sm-3">
+						<b>Teachers</b>
+						<br>
+						<%= link_to "Add a Course", new_instructor_course_path %>
+					</div>
+					<div class="col-xs-12 col-sm-3">
+						<b>About</b>
+						<br>
+						<%= link_to "Team", "#" %>
+						<br>
+						<%= link_to "Careers", "#" %>
+						<br>
+						<%= link_to "Privacy Policy", "#" %>
+					</div>
+					<div class="col-xs-12 col-sm-3">
+						<b>Contact</b>
+						<br>
+						o.bulkin@gmail.com
+						<br>
+						San Francisco, CA 94107
+					</div>
+					<div class="col-xs-12 col-sm-3 social">
+						<b>Social</b>
+						<br>
+						<%= link_to "https://github.com/obulkin" do %>
+							<%= image_tag "github_logo.png", class: "social-button" %>
+						<% end %>
+						<%= link_to "https://www.linkedin.com/in/obulkin" do %>
+							<%= image_tag "linkedin_logo.png", class: "social-button" %>
+						<% end %>
+					</div>
+				</div>
 			</div>
 		</footer>
 	</body>

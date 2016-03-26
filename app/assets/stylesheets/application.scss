@@ -79,6 +79,15 @@ h1, h2, h3, h4, h5, h6 {
 	color: white;
 }
 
+.social a:hover {
+	text-decoration: none;
+}
+
+.social-button {
+	height: 32px;
+	margin: 4px 4px 0 0;
+}
+
 .has-error {
 	color: #ff3333;
 	background-color: #FFEEEE;
