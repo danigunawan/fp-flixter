@@ -1,42 +1,44 @@
 source 'https://rubygems.org'
+
 # Use jQuery UI to support sorting of lessons and sections
-gem "jquery-ui-rails"
+gem 'jquery-ui-rails'
 
 # Use ranked-model to make lessons and sections sortable
-gem "ranked-model"
+gem 'ranked-model'
 
 # Use Stripe to process course enrollment payments
-gem "stripe"
+gem 'stripe'
 
 # Use MiniMagick to enable CarrierWave image manipulation via ImageMagick
-gem "mini_magick"
+gem 'mini_magick'
 
 # Use CarrierWave AWS in place of fog for more performant CarrierWave Amazon S3 support
-gem "carrierwave-aws"
+gem 'carrierwave-aws'
 
 # Use Figaro to store and load configuration values
-gem "figaro"
+gem 'figaro'
 
 # Use CarrierWave for easy image and video uploads
-gem "carrierwave"
+gem 'carrierwave'
 
 # Use Kaminari for simple pagination
-gem "kaminari"
+gem 'kaminari', '~> 0.16.3'
 
 # Add Simple Form for easy form creation
-gem "simple_form"
+gem 'simple_form'
 
 # Use Devise for easy authentication
-gem "devise"
+gem 'devise'
 
 # Add Bootstrap 3 via Sass
-gem "bootstrap-sass", "~>3.3.6"
+gem 'bootstrap-sass', '~> 3.3.6'
 
 # Add gem needed for Heroku support
-gem "rails_12factor", group: :production
+gem 'rails_12factor', group: :production
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.1'
+# To bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 4.2.7.1'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
@@ -50,12 +52,18 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+
+# Lock Turbolinks version to use older DOM events
+gem 'turbolinks', '~> 2.5.4'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+# Explicitly specify Nokogiri version to address security vulnerability.
+# Required by Rails.
+gem 'nokogiri', '~> 1.8.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -68,12 +76,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   # Use byebug anywhere in the code to stop execution and get a debugger console
-  gem "byebug"
+  gem 'byebug'
 end
 
 group :development do
   # An enhanced version of IRB that's useful for debugging
-  gem "pry"
+  gem 'pry'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

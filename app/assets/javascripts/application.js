@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery-ui/sortable
+//= require jquery-ui/widgets/sortable
 //= require jquery.ui.touch-punch.min
 //= require bootstrap-sprockets
 //= require jquery_ujs
